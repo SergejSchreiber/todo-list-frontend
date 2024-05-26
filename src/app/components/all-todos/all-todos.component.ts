@@ -26,7 +26,7 @@ export class AllTodosComponent {
     try {
       this.todos = await this.loadTodos();
       console.log(this.todos);
-    } catch(e) {
+    } catch (e) {
       this.error = 'Fehler beim Laden';
     }
   }
@@ -100,13 +100,24 @@ export class AllTodosComponent {
     const body = {
       "status": newStatus
     };
-    
+
     try {
       await lastValueFrom(this.http.patch(url, body));
       this.todos = this.todos.map((t: any) => t.id === todo.id ? { ...t, status: newStatus } : t);
     } catch (error) {
       console.error(error);
       this.error = 'Fehler beim Aktualisieren des Todo-Status';
+    }
+  }
+
+  async deleteTodo(todo: any) {
+    const url = `${environment.baseUrl}/todos/${todo.id}/`;
+    try {
+      await lastValueFrom(this.http.delete(url));
+      this.todos = this.todos.filter((t: any) => t.id !== todo.id);
+    } catch (error) {
+      console.error(error);
+      this.error = 'Fehler beim Löschen des Todos';
     }
   }
 }

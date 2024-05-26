@@ -24,6 +24,7 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
+      <button (click)="deleteTodo(todo)">Delete</button>
     </div>
   </td>
   <td (drop)="onDrop($event, 'Do today')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
@@ -34,6 +35,7 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
+      <button (click)="deleteTodo(todo)">Delete</button>
     </div>
   </td>
   <td (drop)="onDrop($event, 'In Process')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
@@ -44,6 +46,7 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
+      <button (click)="deleteTodo(todo)">Delete</button>
     </div>
   </td>
   <td (drop)="onDrop($event, 'Done')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
@@ -54,6 +57,7 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
+      <button (click)="deleteTodo(todo)">Delete</button>
     </div>
   </td>
 </table>
