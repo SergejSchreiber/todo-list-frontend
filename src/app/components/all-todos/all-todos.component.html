@@ -15,7 +15,7 @@
 </div>
 <table>
     <td><span class="categories">To-Do</span>
-        <div *ngFor="let todo of todos" class="todobox">
+        <div *ngFor="let todo of filterToDo(todos)" class="todobox">
             <span class="todo-title">
                 {{ todo.title }}
             </span>
@@ -29,12 +29,12 @@
                 Due Date: {{ todo.due_date }}
             </span>
             <span>
-                Priority: {{ todo.priority }} {{ todo.author }}
+                Priority: {{ todo.priority }}
             </span>
         </div>
     </td>
     <td><span class="categories">Do today</span>
-        <div *ngFor="let todo of todos" class="todobox">
+        <div *ngFor="let todo of filterDoToday(todos)" class="todobox">
             <span class="todo-title">
                 {{ todo.title }}
             </span>
