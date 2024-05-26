@@ -1,20 +1,35 @@
 <h3>{{ error }}</h3>
 <h1>KANBAN BOARD</h1>
 
-<div (click)="addTodo()" class="add-todo-box">
-  <div class="add-todo-button">+</div>
-</div>
-
-<div class="new-todo-container">
-
-  <input type="text" name="title" [(ngModel)]="title" required placeholder="title...">
-  <input type="text" name="description" [(ngModel)]="description" required placeholder="description...">
-  <input type="date" name="due_date" [(ngModel)]="due_date" required>
-  <input type="number" name="priority" [(ngModel)]="priority">
-  <select name="status" [(ngModel)]="status" required>
-    <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
-  </select>
-</div>
+<form (ngSubmit)="addTodo()" class="add-todo-box">
+    <div class="title-description-box">
+        <div>
+            <input type="text" name="title" [(ngModel)]="title" required placeholder="title...">
+        </div>
+        <div>
+            <input type="text" name="description" [(ngModel)]="description" required placeholder="description...">
+        </div>
+    </div>
+    <div>
+        <div>
+            <span>Due date: </span> <br>
+            <input type="date" name="due_date" [(ngModel)]="due_date" required>
+        </div>
+        <div>
+            <span>Priority: </span> <br>
+            <input type="number" name="priority" [(ngModel)]="priority">
+        </div>
+    </div>
+    <div>
+      <select name="status" [(ngModel)]="status" required>
+        <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" class="add-todo-button">+</button>
+    </div>
+  </form>
+  
 
 <table>
   <td (drop)="onDrop($event, 'To-do')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">

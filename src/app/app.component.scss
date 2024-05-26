@@ -1,0 +1,13 @@
+.logout-box {
+    display: flex;
+    justify-content: end;
+    margin: 25px;
+}
+
+.logout-button {
+    font-weight: 900;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(71, 39, 39, 0.363);
+}

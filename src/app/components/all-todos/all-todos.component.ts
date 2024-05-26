@@ -14,9 +14,9 @@ export class AllTodosComponent {
   title: string = "";
   description: string = "";
   created_at: string = "";
-  due_date: string = "";
-  priority: string = "";
-  status: string = "";
+  due_date: string = new Date().toISOString().split('T')[0];
+  priority: string = "1";
+  status: string = "To-do";
 
   statusOptions: string[] = ['To-do', 'Do today', 'In Process', 'Done']
 

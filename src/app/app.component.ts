@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-list-frontend';
+
+  constructor(private as: AuthService, private router: Router) {}
+
+  logout() {
+    this.as.logout();
+    this.router.navigateByUrl('/login');
+  }
 }

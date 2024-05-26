@@ -18,4 +18,8 @@ export class AuthService {
     }
     return lastValueFrom(this.http.post(url, body));
   }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
 }

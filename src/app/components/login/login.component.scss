@@ -1,0 +1,28 @@
+h1 {
+    margin: 25px;
+    color: #303030;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 100px;
+    
+    input {
+        width: 250px;
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    button {
+        padding: 15px 50px;
+        border-radius: 10px;
+        font-size: larger;
+        font-weight: 600;
+        border: none;
+        background-color: rgba(0, 128, 0, 0.219);
+    }
+}

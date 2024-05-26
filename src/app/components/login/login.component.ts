@@ -25,4 +25,9 @@ export class LoginComponent {
     }
   }
 
+  logout() {
+    this.as.logout();
+    this.router.navigateByUrl('/login');
+  }
+
 }
