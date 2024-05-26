@@ -15,7 +15,7 @@
 </div>
 <table>
     <td><span class="categories">To-Do</span>
-        <div *ngFor="let todo of filterToDo(todos)" class="todobox">
+        <div *ngFor="let todo of filterToDo(todos)" class="todobox" draggable="true">
             <span class="todo-title">
                 {{ todo.title }}
             </span>
@@ -34,7 +34,7 @@
         </div>
     </td>
     <td><span class="categories">Do today</span>
-        <div *ngFor="let todo of filterDoToday(todos)" class="todobox">
+        <div *ngFor="let todo of filterDoToday(todos)" class="todobox" draggable="true">
             <span class="todo-title">
                 {{ todo.title }}
             </span>
