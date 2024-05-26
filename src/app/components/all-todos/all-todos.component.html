@@ -1,11 +1,12 @@
 <h3>{{ error }}</h3>
-<h3>Kanban Board</h3>
+<h1>KANBAN BOARD</h1>
 
 <div (click)="addTodo()" class="add-todo-box">
   <div class="add-todo-button">+</div>
 </div>
 
-<div>
+<div class="new-todo-container">
+
   <input type="text" name="title" [(ngModel)]="title" required placeholder="title...">
   <input type="text" name="description" [(ngModel)]="description" required placeholder="description...">
   <input type="date" name="due_date" [(ngModel)]="due_date" required>
@@ -24,7 +25,9 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
-      <button (click)="deleteTodo(todo)">Delete</button>
+      <div class="delete-button-box">
+        <span (click)="deleteTodo(todo)" class="delete-button">X</span>
+    </div>
     </div>
   </td>
   <td (drop)="onDrop($event, 'Do today')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
@@ -35,7 +38,9 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
-      <button (click)="deleteTodo(todo)">Delete</button>
+      <div class="delete-button-box">
+        <span (click)="deleteTodo(todo)" class="delete-button">X</span>
+    </div>
     </div>
   </td>
   <td (drop)="onDrop($event, 'In Process')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
@@ -46,7 +51,9 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
-      <button (click)="deleteTodo(todo)">Delete</button>
+      <div class="delete-button-box">
+          <span (click)="deleteTodo(todo)" class="delete-button">X</span>
+      </div>
     </div>
   </td>
   <td (drop)="onDrop($event, 'Done')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
@@ -57,7 +64,9 @@
       <span>Created at: <br> {{ todo.created_at }}</span>
       <span>Due Date: <br> {{ todo.due_date }}</span>
       <span>Priority: {{ todo.priority }}</span>
-      <button (click)="deleteTodo(todo)">Delete</button>
+      <div class="delete-button-box">
+        <span (click)="deleteTodo(todo)" class="delete-button">X</span>
+    </div>
     </div>
   </td>
 </table>
