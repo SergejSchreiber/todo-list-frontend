@@ -20,17 +20,6 @@ export class AllTodosComponent {
 
   statusOptions: string[] = ['To-do', 'Do today', 'In Process', 'Done']
 
-
-  people = [
-    {name: 'Bob', status: "done"}, 
-    {name: 'Alice', status: "a"}, 
-    {name: 'Becky', status: "a"}, 
-    {name: 'Joe', status: "a"},
-    {name: 'Sally', status: "Done"}
-  ];
-
-
-
   constructor(private http: HttpClient) { }
 
   async ngOnInit() {
@@ -46,7 +35,6 @@ export class AllTodosComponent {
     const url = environment.baseUrl + "/todos/";
     return lastValueFrom(this.http.get(url));
   }
-
 
   filterToDo(todos: any[]): any[] {
     return todos.filter(p => p.status == "To-do");
