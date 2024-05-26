@@ -1,0 +1,63 @@
+h3 {
+    margin: 25px;
+}
+
+table {
+    margin: 25px;
+}
+
+.add-todo-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.add-todo-button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: 900;
+    background-color: #30303030;
+    border-radius: 50%;
+    color: green;
+}
+
+.categories {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    background-color: #30309020;
+    padding: 25px;
+    border: 3px solid #10101010;
+}
+
+.todobox {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #303030;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 25px;
+    gap: 10px;
+    background-color: #30309020;
+}
+
+.todo-title {
+    font-weight: 800;
+    color: aliceblue;
+    background-color: #0002697c;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.todo-description {
+    font-weight: 900;
+    padding: 10px 0 10px 10px;
+    margin: 0 -10px 0 -10px;
+    border-bottom: 3px solid #10101010;
+}

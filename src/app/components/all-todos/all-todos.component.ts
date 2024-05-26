@@ -11,6 +11,15 @@ import { lastValueFrom } from 'rxjs';
 export class AllTodosComponent {
   todos: any = [];
   error = "";
+  title: string = "";
+  description: string = "";
+  created_at: string = "";
+  due_date: string = "";
+  priority: string = "";
+  status: string = "";
+
+  statusOptions: string[] = ['To-do', 'Do today', 'In Process', 'Done']
+
   constructor(private http: HttpClient) { }
 
   async ngOnInit() {
@@ -24,12 +33,23 @@ export class AllTodosComponent {
 
   loadTodos() {
     const url = environment.baseUrl + "/todos/";
-    let headers = new HttpHeaders();
-    headers = headers.set('Authorization', 'Token ' + localStorage.getItem('token'));
+    return lastValueFrom(this.http.get(url));
+  }
 
-    return lastValueFrom(this.http.get(url, {
-      headers: headers
-    }));
+  
+
+  addTodo() {
+    const url = environment.baseUrl + "/todos/";
+    const body = {
+      "title": this.title,
+      "description": this.description,
+      // "created_at": this.created_at,
+      "due_date": this.due_date,
+      "priority": this.priority,
+      "status": this.status,
+      "author":2
+    }
+    return lastValueFrom(this.http.post(url, body));
   }
 
 }
