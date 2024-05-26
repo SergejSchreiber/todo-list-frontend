@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { lastValueFrom } from 'rxjs';
@@ -74,6 +74,15 @@ export class AllTodosComponent {
 
   allowDrop(event: DragEvent) {
     event.preventDefault();
+    (event.currentTarget as HTMLElement).classList.add('drag-over');
+  }
+
+  onDragEnter(event: DragEvent) {
+    (event.currentTarget as HTMLElement).classList.add('drag-over');
+  }
+
+  onDragLeave(event: DragEvent) {
+    (event.currentTarget as HTMLElement).classList.remove('drag-over');
   }
 
   onDragStart(event: DragEvent, todo: any) {
@@ -84,6 +93,8 @@ export class AllTodosComponent {
     event.preventDefault();
     const todo = JSON.parse(event.dataTransfer?.getData("todo") || '{}');
     todo.status = newStatus;
+
+    (event.currentTarget as HTMLElement).classList.remove('drag-over');
 
     const url = `${environment.baseUrl}/todos/${todo.id}/`;
     const body = {

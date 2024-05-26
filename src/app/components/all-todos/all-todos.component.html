@@ -16,44 +16,44 @@
 </div>
 
 <table>
-    <td (drop)="onDrop($event, 'To-do')" (dragover)="allowDrop($event)">
-      <span class="categories">To-Do</span>
-      <div *ngFor="let todo of filterToDo(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
-        <span class="todo-title">{{ todo.title }}</span>
-        <span class="todo-description">{{ todo.description }}</span>
-        <span>Created at: <br> {{ todo.created_at }}</span>
-        <span>Due Date: <br> {{ todo.due_date }}</span>
-        <span>Priority: {{ todo.priority }}</span>
-      </div>
-    </td>
-    <td (drop)="onDrop($event, 'Do today')" (dragover)="allowDrop($event)">
-      <span class="categories">Do today</span>
-      <div *ngFor="let todo of filterDoToday(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
-        <span class="todo-title">{{ todo.title }}</span>
-        <span class="todo-description">{{ todo.description }}</span>
-        <span>Created at: <br> {{ todo.created_at }}</span>
-        <span>Due Date: <br> {{ todo.due_date }}</span>
-        <span>Priority: {{ todo.priority }}</span>
-      </div>
-    </td>
-    <td (drop)="onDrop($event, 'In Process')" (dragover)="allowDrop($event)">
-      <span class="categories">In Process</span>
-      <div *ngFor="let todo of filterInProcess(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
-        <span class="todo-title">{{ todo.title }}</span>
-        <span class="todo-description">{{ todo.description }}</span>
-        <span>Created at: <br> {{ todo.created_at }}</span>
-        <span>Due Date: <br> {{ todo.due_date }}</span>
-        <span>Priority: {{ todo.priority }}</span>
-      </div>
-    </td>
-    <td (drop)="onDrop($event, 'Done')" (dragover)="allowDrop($event)">
-      <span class="categories">Done</span>
-      <div *ngFor="let todo of filterDone(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
-        <span class="todo-title">{{ todo.title }}</span>
-        <span class="todo-description">{{ todo.description }}</span>
-        <span>Created at: <br> {{ todo.created_at }}</span>
-        <span>Due Date: <br> {{ todo.due_date }}</span>
-        <span>Priority: {{ todo.priority }}</span>
-      </div>
-    </td>
+  <td (drop)="onDrop($event, 'To-do')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
+    <span class="categories">To-Do</span>
+    <div *ngFor="let todo of filterToDo(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
+      <span class="todo-title">{{ todo.title }}</span>
+      <span class="todo-description">{{ todo.description }}</span>
+      <span>Created at: <br> {{ todo.created_at }}</span>
+      <span>Due Date: <br> {{ todo.due_date }}</span>
+      <span>Priority: {{ todo.priority }}</span>
+    </div>
+  </td>
+  <td (drop)="onDrop($event, 'Do today')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
+    <span class="categories">Do today</span>
+    <div *ngFor="let todo of filterDoToday(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
+      <span class="todo-title">{{ todo.title }}</span>
+      <span class="todo-description">{{ todo.description }}</span>
+      <span>Created at: <br> {{ todo.created_at }}</span>
+      <span>Due Date: <br> {{ todo.due_date }}</span>
+      <span>Priority: {{ todo.priority }}</span>
+    </div>
+  </td>
+  <td (drop)="onDrop($event, 'In Process')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
+    <span class="categories">In Process</span>
+    <div *ngFor="let todo of filterInProcess(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
+      <span class="todo-title">{{ todo.title }}</span>
+      <span class="todo-description">{{ todo.description }}</span>
+      <span>Created at: <br> {{ todo.created_at }}</span>
+      <span>Due Date: <br> {{ todo.due_date }}</span>
+      <span>Priority: {{ todo.priority }}</span>
+    </div>
+  </td>
+  <td (drop)="onDrop($event, 'Done')" (dragover)="allowDrop($event)" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)">
+    <span class="categories">Done</span>
+    <div *ngFor="let todo of filterDone(todos)" class="todobox" draggable="true" (dragstart)="onDragStart($event, todo)">
+      <span class="todo-title">{{ todo.title }}</span>
+      <span class="todo-description">{{ todo.description }}</span>
+      <span>Created at: <br> {{ todo.created_at }}</span>
+      <span>Due Date: <br> {{ todo.due_date }}</span>
+      <span>Priority: {{ todo.priority }}</span>
+    </div>
+  </td>
 </table>
